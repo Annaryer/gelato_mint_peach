@@ -1,0 +1,571 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4F9F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2C3E50;
+    margin: 0;
+}
+
+
+
+nav {
+    width: 100%;
+    min-height: 75px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 7%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.nav-logo {
+    color: #79A38E;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #52665D;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #E29578;
+}
+
+
+
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.small-title {
+    color: #E29578;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+    color: #79A38E;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: #EFA88E;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #63736D;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-icecream {
+    font-size: 180px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+
+.main-btn,
+.secondary-btn,
+.card-btn {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 13px 22px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.main-btn {
+    background: #EFA88E;
+    color: white;
+}
+
+.main-btn:hover {
+    background: #E29578;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #E4EFEA;
+    color: #79A38E;
+}
+
+.secondary-btn:hover {
+    background: #D5E5DE;
+}
+
+
+
+.home-section {
+    text-align: center;
+    padding: 70px 7%;
+    background: white;
+}
+
+.home-section h2 {
+    color: #79A38E;
+    font-size: 36px;
+    margin-top: 5px;
+}
+
+
+
+.page-header {
+    text-align: center;
+    padding: 70px 20px 40px;
+    width: 100%;
+}
+
+.page-header h1 {
+    color: #79A38E;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.page-header p:not(.small-title) {
+    color: #718079;
+}
+
+
+
+.icecream-grid,
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    width: 86%;
+    max-width: 1100px;
+    margin: 30px auto 60px;
+}
+
+.ice-card {
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(45, 90, 39, 0.07);
+    transition: 0.25s;
+}
+
+.ice-card:hover {
+    transform: translateY(-7px);
+}
+
+.ice-icon,
+.big-ice-icon {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.ice-card h2,
+.ice-card h3 {
+    color: #79A38E;
+}
+
+.ice-card p {
+    color: #8A9691;
+}
+
+.ice-card strong,
+.price {
+    display: block;
+    color: #E29578;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.type {
+    color: #89958F;
+}
+
+.card-btn {
+    background: #E4EFEA;
+    color: #79A38E;
+}
+
+.card-btn:hover {
+    background: #79A38E;
+    color: white;
+}
+
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0 70px;
+}
+
+.order-form,
+.contact-form {
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.order-form label {
+    color: #79A38E;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea,
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #E0EDE7;
+    border-radius: 12px;
+    font-family: inherit;
+    outline: none;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #79A38E;
+}
+
+
+
+.icecream-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.icecream-select {
+    flex: 1;
+    min-width: 0;
+    width: auto !important;
+    padding: 13px;
+    border: 1px solid #D7E5DF;
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+}
+
+.icecream-quantity {
+    flex: 0 0 75px;
+    width: 75px !important;
+    padding: 13px;
+    border: 1px solid #D7E5DF;
+    border-radius: 10px;
+    background: white;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.add-icecream {
+    display: block;
+    margin: 8px auto 28px;
+    padding: 12px 22px;
+    background: linear-gradient(
+        135deg,
+        #E4EFEA,
+        #F8E4DC
+    );
+    color: #527565;
+    border: 1px solid #D5E5DE;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(82, 117, 101, 0.12);
+    transition: 0.2s ease;
+}
+
+.add-icecream:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(82, 117, 101, 0.18);
+    opacity: 0.9;
+}
+
+.add-icecream:active {
+    transform: translateY(0);
+}
+
+
+
+.success-message {
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto 25px;
+    padding: 18px 25px;
+    background-color: #E4EFEA;
+    color: #527565;
+    border-radius: 14px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(45, 90, 39, 0.06);
+}
+
+
+.about-container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 20px auto 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-icon {
+    font-size: 150px;
+}
+
+.about-text {
+    line-height: 1.8;
+}
+
+.about-text h2 {
+    color: #79A38E;
+    font-size: 32px;
+}
+
+.about-text p {
+    color: #65736D;
+}
+
+
+
+.values {
+    width: 85%;
+    max-width: 1000px;
+    margin: auto auto 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.values div {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.values span {
+    font-size: 40px;
+}
+
+.values h3 {
+    color: #79A38E;
+}
+
+
+.contact-container {
+    width: 85%;
+    max-width: 1000px;
+    margin: auto auto 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info div {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.contact-info span {
+    font-size: 30px;
+}
+
+.contact-info h3 {
+    color: #79A38E;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    color: #718079;
+}
+
+.contact-form {
+    max-width: none;
+}
+
+
+.icecream-form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(45, 90, 39, 0.05);
+}
+
+.icecream-form label {
+    color: #79A38E;
+    font-weight: 600;
+}
+
+.icecream-form input {
+    padding: 13px;
+    border: 2px solid #E0EDE7;
+    border-radius: 12px;
+    outline: none;
+}
+
+.icecream-form input:focus {
+    border-color: #79A38E;
+}
+
+.icecream-form button {
+    background: #EFA88E;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.center {
+    text-align: center;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+}
+
+.empty div {
+    font-size: 70px;
+}
+
+
+footer {
+    background: #79A38E;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-icecream {
+        font-size: 110px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .values,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .icecream-row {
+        gap: 8px;
+    }
+
+    .icecream-quantity {
+        flex: 0 0 65px;
+        width: 65px !important;
+    }
+}

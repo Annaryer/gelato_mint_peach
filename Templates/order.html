@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Order | Gelato Mint & Peach</title>
+    <link rel="stylesheet" href="/Static/style.css">
+</head>
+<body>
+<nav>
+    <div class="nav-logo">
+        🍨 Gelato Mint & Peach
+    </div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/order">Order</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+
+
+<section class="page-header">
+    <p class="small-title">
+        YOUR ORDER
+    </p>
+
+    <h1>
+        Make your sweet choice 🍦
+    </h1>
+
+    <p>
+        Select your favorite ice creams.
+    </p>
+
+</section>
+
+<!--<div class="order-container">-->
+
+
+{% if order_success %}
+
+<div class="success-message">
+    💌 Thank You,
+    {{ first_name }} {{ last_name }}.
+    <br>
+    Your order has successfully been received.
+    <br>
+    We will call you
+    <strong>{{ phone }}</strong>
+    phone number in order to accept your order finally.
+</div>
+{% endif %}
+
+
+
+<form
+    action="/order"
+    method="post"
+    class="order-form"
+    onsubmit="prepareOrder()"
+>
+
+    <label>First Name</label>
+    <input
+        type="text"
+        name="first_name"
+        placeholder="Enter your first name"
+        required
+    >
+
+    <label>Last Name</label>
+    <input
+        type="text"
+        name="last_name"
+        placeholder="Enter your last name"
+        required
+    >
+
+    <label>Phone Number</label>
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Enter your phone number"
+        required
+    >
+
+
+    <label>
+        Choose Ice Cream
+    </label>
+    <div id="icecream-list">
+        <div class="icecream-row">
+            <select
+                class="icecream-select"
+                required
+            >
+                <option value="">
+                    Select flavor
+                </option>
+
+
+                {% for icecream in icecreams %}
+
+                <option
+                    value="{{ icecream['name'] }}"
+                    data-price="{{ icecream['price'] }}"
+                >
+
+                    {{ icecream["name"] }}
+                    — {{ icecream["price"] }} ֏
+
+                </option>
+                {% endfor %}
+            </select>
+            <input
+                type="number"
+                class="icecream-quantity"
+                min="1"
+                value="1"
+                required
+            >
+        </div>
+    </div>
+
+    <button
+        type="button"
+        class="add-icecream"
+        onclick="addIceCream()"
+    >
+
+        ＋ Add another ice cream
+
+    </button>
+
+    <input
+        type="hidden"
+        name="selected_items"
+        id="selected_items"
+    >
+    <input
+        type="hidden"
+        name="total_price"
+        id="total_price"
+    >
+
+    <div class="order-total">
+        <strong id="total">
+        </strong>
+    </div>
+
+    <label>
+        Additional Message
+    </label>
+
+    <textarea
+        name="message"
+        rows="4"
+        placeholder="Any special request?"
+    ></textarea>
+
+    <button
+        type="submit"
+        class="main-btn"
+    >
+        Place Order 🍨
+    </button>
+
+</form>
+</div>
+<script>
+
+function addIceCream() {
+
+
+    let container =
+        document.getElementById("icecream-list");
+
+
+    let row =
+        document.createElement("div");
+
+
+    row.className =
+        "icecream-row";
+
+
+    row.innerHTML = `
+
+        <select
+            class="icecream-select"
+            required
+        >
+
+            <option value="">
+                Select flavor
+            </option>
+
+            {% for icecream in icecreams %}
+
+            <option
+                value="{{ icecream['name'] }}"
+                data-price="{{ icecream['price'] }}"
+            >
+
+                {{ icecream["name"] }}
+                — {{ icecream["price"] }} ֏
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <input
+            type="number"
+            class="icecream-quantity"
+            min="1"
+            value="1"
+            required
+        >
+
+    `;
+
+    container.appendChild(row);
+
+}
+function prepareOrder() {
+    let rows =
+        document.querySelectorAll(".icecream-row");
+    let items = [];
+    let total = 0;
+    rows.forEach(function(row) {
+        let select =
+            row.querySelector(".icecream-select");
+        let quantity =
+            row.querySelector(".icecream-quantity");
+        let selectedOption =
+            select.options[
+                select.selectedIndex
+            ];
+        if (select.value) {
+            let name =
+                select.value;
+            let price =
+                Number(
+                    selectedOption.dataset.price
+                );
+            let qty =
+                Number(quantity.value);
+            items.push(
+                name + " x " + qty
+            );
+            total +=
+                price * qty;
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "selected_items"
+    ).value =
+        items.join(", ");
+
+
+    document.getElementById(
+        "total_price"
+    ).value =
+        total;
+
+
+    document.getElementById(
+        "total"
+    ).innerText =
+        total + " ֏";
+
+
+}
+
+</script>
+
+<footer>
+    <p>
+        © 2026 Gelato Mint & Peach
+    </p>
+</footer>
+</body>
+</html>

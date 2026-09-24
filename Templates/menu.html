@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu - Gelato Mint & Peach</title>
+    <link rel="stylesheet" href="/Static/style.css?v=10">
+</head>
+
+<body>
+
+<nav class="nav">
+    <div class="nav-logo">
+        🍨 Gelato Mint & Peach
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/menu" class="active">Menu</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="page-header">
+    <h1>Our Menu 🍦</h1>
+    <p>Discover our delicious collection of handmade ice creams.</p>
+</section>
+
+
+<section class="menu-grid">
+
+    {% for icecream in icecreams %}
+
+    <div class="ice-card">
+
+        <div class="ice-card-icon">
+            🍨
+        </div>
+
+        <h2>{{ icecream["name"] }}</h2>
+
+        <p class="ice-type">
+            {{ icecream["type"] }}
+        </p>
+
+        <p class="ice-price">
+            {{ icecream["price"] }} ֏
+        </p>
+
+        <a href="/order" class="main-btn">
+            Order Now
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</section>
+
+
+{% if not icecreams %}
+<div class="empty">
+    <p>No ice creams available yet 🍦</p>
+</div>
+{% endif %}
+
+
+<footer>
+    <p>© 2026 Gelato Mint & Peach 🍨</p>
+</footer>
+
+</body>
+</html>

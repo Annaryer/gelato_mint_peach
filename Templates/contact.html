@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Gelato Mint & Peach</title>
+    <link rel="stylesheet" href="/Static/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-logo">🍨 Gelato Mint & Peach</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/order">Order</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">CONTACT US</p>
+
+    <h1>We would love to hear from you 💌</h1>
+
+    <p>Have a question? Send us a message.</p>
+
+</section>
+
+
+<div class="contact-container">
+
+    <div class="contact-info">
+
+        <div>
+            <span>📍</span>
+            <h3>Location</h3>
+            <p>Yerevan, Armenia, Nalbandyan 17/1</p>
+        </div>
+
+        <div>
+            <span>📧</span>
+            <h3>Email</h3>
+            <p>gelatomint@gmail.com</p>
+        </div>
+
+        <div>
+            <span>📞</span>
+            <h3>Phone</h3>
+            <p>+374 94 124251</p>
+        </div>
+
+    </div>
+
+    {% if message_sent %}
+
+<div class="success-message">
+    💌 Thank You, {{ name }}.
+     Your message has successfully been sent.
+     We'll reply as soon as possible.
+</div>
+
+{% endif %}
+
+  <form action="/contact" method="post" class="contact-form">
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+    >
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+    >
+
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Your message"
+        required
+    ></textarea>
+
+    <button type="submit" class="main-btn">
+        Send Message 💌
+    </button>
+
+</form>
+
+</div>
+
+
+<footer>
+    <p>© 2026 Gelato Mint & Peach</p>
+</footer>
+
+</body>
+</html>

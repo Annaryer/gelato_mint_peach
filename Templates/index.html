@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gelato Mint & Peach</title>
+    <link rel="stylesheet" href="/Static/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-logo">🍨 Gelato Mint & Peach</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/order">Order</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+    <div class="hero-text">
+        <p class="small-title">WELCOME TO</p>
+        <h1>
+            Gelato
+            <span>Mint & Peach</span>
+        </h1>
+
+        <p>
+            Discover delicious handcrafted ice cream
+            made to bring a little sweetness to your day.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/menu" class="main-btn">
+                Explore Menu 🍦
+            </a>
+
+            <a href="/about" class="secondary-btn">
+                Our Story
+            </a>
+        </div>
+    </div>
+    <div class="hero-icecream">
+        🍨
+    </div>
+</section>
+<section class="home-section">
+    <p class="small-title">OUR FAVORITES</p>
+    <h2>Sweet moments start here</h2>
+    <div class="icecream-grid">
+        {% for icecream in icecreams[:3] %}
+        <div class="ice-card">
+            <div class="ice-icon">🍦</div>
+            <h3>{{ icecream["name"] }}</h3>
+            <p>{{ icecream["type"] }}</p>
+            <strong>{{ icecream["price"] }} ֏</strong>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="/menu" class="main-btn">
+        See Full Menu
+    </a>
+</section>
+<footer>
+    <p>© 2026 Gelato Mint & Peach</p>
+</footer>
+</body>
+</html>
