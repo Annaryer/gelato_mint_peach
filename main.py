@@ -1,6 +1,6 @@
 
 from fastapi import FastAPI, Request, Form
-from fastapi.responses import RedirectResponse, Response
+from fastapi.responses import RedirectResponse, Response, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -144,36 +144,9 @@ def send_message(
     )
 @app.get("/sitemap.xml")
 def sitemap():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    return FileResponse("sitemap.xml", media_type="application/xml")
 
-    <url>
-        <loc>https://gelato-mint-peach.onrender.com/</loc>
-    </url>
 
-    <url>
-        <loc>https://gelato-mint-peach.onrender.com/menu</loc>
-    </url>
-
-    <url>
-        <loc>https://gelato-mint-peach.onrender.com/order</loc>
-    </url>
-
-    <url>
-        <loc>https://gelato-mint-peach.onrender.com/about</loc>
-    </url>
-
-    <url>
-        <loc>https://gelato-mint-peach.onrender.com/contact</loc>
-    </url>
-
-</urlset>
-"""
-
-    return Response(
-        content=xml,
-        media_type="application/xml"
-    )
 @app.post("/add")
 def add_icecream(
         name: str = Form(...),
