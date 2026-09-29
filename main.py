@@ -1,4 +1,4 @@
-
+from fastapi.responses import PlainTextResponse
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import RedirectResponse, Response, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -146,6 +146,10 @@ def send_message(
 def sitemap():
     return FileResponse("sitemap.xml", media_type="application/xml")
 
+
+@app.get("/robots.txt", response_class=PlainTextResponse)
+def robots_txt():
+    return "User-agent: *\nAllow: /"
 
 @app.post("/add")
 def add_icecream(
