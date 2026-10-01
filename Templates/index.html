@@ -35,7 +35,13 @@
 <body>
 
 <nav>
-    <div class="nav-logo">🍨 Gelato Mint & Peach</div>
+   <div class="nav-logo">
+        <!-- Атрибут alt для логотипа -->
+        <a href="/">
+            <img src="/Static/logo.png" alt="Gelato Mint & Peach Logo" style="height: 30px; vertical-align: middle;" onError="this.style.display='none'">
+            🍨 Gelato Mint & Peach
+        </a>
+    </div>
 
     <div class="nav-links">
         <a href="/">Home</a>
@@ -51,8 +57,7 @@
     <div class="hero-text">
         <p class="small-title">WELCOME TO</p>
         <h1>
-            Gelato
-            <span>Mint & Peach</span>
+           Gelato Mint & Peach
         </h1>
 
         <p>
@@ -76,7 +81,7 @@
 </section>
 <section class="home-section">
     <p class="small-title">OUR FAVORITES</p>
-    <h2>Sweet moments start here</h2>
+    <h2>Sweet Gelato Mint & Peach Moments Start Here</h2>
     <div class="icecream-grid">
         {% for icecream in icecreams[:3] %}
         <div class="ice-card">
