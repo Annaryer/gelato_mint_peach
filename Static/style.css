@@ -23,7 +23,7 @@ nav {
 }
 
 .nav-logo {
-    color: #79A38E;
+    color: #426B59;
     font-size: 21px;
     font-weight: 800;
 }
@@ -41,7 +41,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #E29578;
+    color: #8F523D;
 }
 
 
@@ -60,7 +60,7 @@ nav {
 }
 
 .small-title {
-    color: #E29578;
+    color: #8F523D;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -69,13 +69,13 @@ nav {
 .hero h1 {
     font-size: 64px;
     line-height: 1.05;
-    color: #79A38E;
+    color: #426B59;
     margin: 15px 0;
 }
 
 .hero h1 span {
     display: block;
-    color: #EFA88E;
+    color: #8F523D;
 }
 
 .hero p {
@@ -121,18 +121,18 @@ nav {
 }
 
 .main-btn {
-    background: #EFA88E;
+    background: #8F523D;
     color: white;
 }
 
 .main-btn:hover {
-    background: #E29578;
+    background: #7A4433;
     transform: translateY(-2px);
 }
 
 .secondary-btn {
     background: #E4EFEA;
-    color: #79A38E;
+    color: #426B59;
 }
 
 .secondary-btn:hover {
@@ -148,7 +148,7 @@ nav {
 }
 
 .home-section h2 {
-    color: #79A38E;
+    color: #426B59;
     font-size: 36px;
     margin-top: 5px;
 }
@@ -162,13 +162,13 @@ nav {
 }
 
 .page-header h1 {
-    color: #79A38E;
+    color: #426B59;
     font-size: 42px;
     margin: 10px 0;
 }
 
 .page-header p:not(.small-title) {
-    color: #718079;
+    color: #5A6F66;
 }
 
 
@@ -204,34 +204,35 @@ nav {
 
 .ice-card h2,
 .ice-card h3 {
-    color: #79A38E;
+    color: #426B59;
 }
 
 .ice-card p {
-    color: #8A9691;
+    color: #6A7771;
 }
 
 .ice-card strong,
 .price {
     display: block;
-    color: #E29578;
+    color: #8F523D;
     font-size: 20px;
     margin: 15px 0;
 }
 
 .type {
-    color: #89958F;
+    color: #6A7771;
 }
 
 .card-btn {
     background: #E4EFEA;
-    color: #79A38E;
+    color: #426B59;
 }
 
 .card-btn:hover {
-    background: #79A38E;
+    background: #426B59;
     color: white;
 }
+
 
 
 .order-container {
@@ -257,7 +258,7 @@ nav {
 }
 
 .order-form label {
-    color: #79A38E;
+    color: #426B59;
     font-weight: 700;
     margin-top: 8px;
 }
@@ -280,7 +281,7 @@ nav {
 .order-form textarea:focus,
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #79A38E;
+    border-color: #426B59;
 }
 
 
@@ -315,6 +316,7 @@ nav {
     font-size: 15px;
     text-align: center;
 }
+
 
 
 .add-icecream {
@@ -362,6 +364,7 @@ nav {
 }
 
 
+
 .about-container {
     width: 85%;
     max-width: 1000px;
@@ -380,7 +383,7 @@ nav {
 }
 
 .about-text h2 {
-    color: #79A38E;
+    color: #426B59;
     font-size: 32px;
 }
 
@@ -411,8 +414,9 @@ nav {
 }
 
 .values h3 {
-    color: #79A38E;
+    color: #426B59;
 }
+
 
 
 .contact-container {
@@ -441,17 +445,18 @@ nav {
 }
 
 .contact-info h3 {
-    color: #79A38E;
+    color: #426B59;
     margin-bottom: 5px;
 }
 
 .contact-info p {
-    color: #718079;
+    color: #5A6F66;
 }
 
 .contact-form {
     max-width: none;
 }
+
 
 
 .icecream-form {
@@ -468,7 +473,7 @@ nav {
 }
 
 .icecream-form label {
-    color: #79A38E;
+    color: #426B59;
     font-weight: 600;
 }
 
@@ -480,11 +485,11 @@ nav {
 }
 
 .icecream-form input:focus {
-    border-color: #79A38E;
+    border-color: #426B59;
 }
 
 .icecream-form button {
-    background: #EFA88E;
+    background: #8F523D;
     color: white;
     padding: 14px;
     border: none;
@@ -492,6 +497,7 @@ nav {
     font-weight: bold;
     cursor: pointer;
 }
+
 
 
 .center {
@@ -511,13 +517,15 @@ nav {
 }
 
 
+
 footer {
-    background: #79A38E;
+    background: #426B59;
     color: white;
     text-align: center;
     padding: 25px;
     margin-top: 50px;
 }
+
 
 
 @media (max-width: 700px) {
