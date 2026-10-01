@@ -149,7 +149,7 @@ def sitemap():
 
 @app.get("/robots.txt", response_class=PlainTextResponse)
 def robots_txt():
-    return "User-agent: *\nAllow: /"
+    return "User-agent: *\nAllow: /\nSitemap: https://gelato-mint-peach.onrender.com/sitemap.xml"
 
 @app.post("/add")
 def add_icecream(
